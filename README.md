@@ -25,7 +25,9 @@ No environment variables or backend services are required to run the site.
 ## Structure
 
 - `src/components/` — shared interface components.
+- `src/pages/` — page compositions.
 - `src/sections/` — page sections.
+- `src/data/projects.js` — project descriptions, images, and links.
 - `src/styles/` — theme variables and shared styles.
 - `src/App.jsx` — application layout.
 - `public/` — static assets and font licenses.
@@ -35,6 +37,10 @@ No environment variables or backend services are required to run the site.
 Tailwind CSS uses its Vite plugin. Colors, fonts, and spacing are defined in `src/styles/tokens.css`. Layout uses utility classes; shared controls and base styles live in `globals.css`.
 
 DM Sans and Instrument Serif are served locally through Fontsource. Both use the SIL Open Font License; copies are included in `public/licenses/`.
+
+## Projects
+
+The NovaWeb preview is a screenshot of [my published landing page](https://isaiasdevco.github.io/landing-page-project/), a project for a fictional digital studio. Its source is available in [landing-page-project](https://github.com/isaiasdevco/landing-page-project). Medicina is marked as in review; its source is not publicly available.
 
 ## Validation
 

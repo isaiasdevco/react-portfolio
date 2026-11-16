@@ -1,26 +1,24 @@
 @theme {
-  --color-bg: #f8f5ef;
-  --color-surface: #ffffff;
-  --color-surface-soft: #eef1e9;
-  --color-primary: #105536;
-  --color-primary-hover: #0b4029;
-  --color-text: #1b1b19;
-  --color-muted: #66645e;
-  --color-border: #ddd8ce;
+  --color-bg: #171f27;
+  --color-surface: #1d2832;
+  --color-primary: #b4c4af;
+  --color-primary-hover: #cad6c6;
+  --color-on-primary: #171f27;
+  --color-text: #eeeae3;
+  --color-muted: #adb4bb;
+  --color-border: #3b4650;
 
   --font-sans: 'DM Sans Variable', Arial, sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
 
   --spacing: 0.25rem;
-  --text-display: clamp(2.5rem, 2rem + 2vw, 3.5rem);
-  --radius-card: 0.75rem;
-  --radius-control: 0.375rem;
-  --shadow-card: 0 4px 24px rgb(27 27 25 / 3%);
+  --radius-preview: 0.5rem;
+  --radius-control: 0.25rem;
 }
 
 :root {
-  --container-width: 76rem;
+  --container-width: 70rem;
   --page-gutter: clamp(1.25rem, 4vw, 3rem);
-  --heading-size: clamp(3.25rem, 1.75rem + 4vw, 5.5rem);
+  --heading-size: clamp(2.5rem, 2rem + 2vw, 3.25rem);
   --transition-duration: 160ms;
 }
