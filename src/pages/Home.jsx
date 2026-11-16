@@ -24,7 +24,7 @@ export default function Home() {
             <article
               key={project.id}
               aria-labelledby={`${project.id}-heading`}
-              className="grid gap-4 sm:grid-cols-[9rem_minmax(0,1fr)]"
+              className="grid gap-4 sm:grid-cols-[9rem_minmax(0,1fr)] lg:grid-cols-[11rem_minmax(0,1fr)]"
             >
               <img
                 src={project.image.src}

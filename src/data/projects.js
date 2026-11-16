@@ -25,9 +25,9 @@ const projects = [
     liveUrl: null,
     image: {
       src: '/images/projects/medicina.png',
-      alt: 'Medicina homepage with patient, doctor and document modules.',
+      alt: 'Medicina patient management panel with fictitious demo records and doctor assignments.',
       width: 1440,
-      height: 1000,
+      height: 900,
     },
   },
 ]
