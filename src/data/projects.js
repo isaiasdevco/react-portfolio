@@ -19,9 +19,16 @@ const projects = [
   {
     id: 'medicina',
     title: 'Medicina',
-    description: 'Project details are being reviewed.',
+    description: 'An academic app for managing patients and doctors.',
+    technologies: ['PHP', 'Laravel', 'SQLite'],
     sourceUrl: null,
-    status: 'in-review',
+    liveUrl: null,
+    image: {
+      src: '/images/projects/medicina.png',
+      alt: 'Medicina homepage with patient, doctor and document modules.',
+      width: 1440,
+      height: 1000,
+    },
   },
 ]
 

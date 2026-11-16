@@ -5,7 +5,7 @@ import projects from '../data/projects.js'
 
 export default function Home() {
   const featuredProject = projects.find(project => project.featured)
-  const pendingProjects = projects.filter(project => project.status === 'in-review')
+  const otherProjects = projects.filter(project => !project.featured)
 
   return (
     <>
@@ -20,18 +20,33 @@ export default function Home() {
 
       <div className="grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-14">
         <div>
-          {pendingProjects.map(project => (
-            <article key={project.id} aria-labelledby={`${project.id}-heading`}>
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <h2 id={`${project.id}-heading`} className="text-2xl font-semibold tracking-tight">
-                  {project.title}
-                </h2>
-                <p className="text-sm text-muted">In review</p>
+          {otherProjects.map(project => (
+            <article
+              key={project.id}
+              aria-labelledby={`${project.id}-heading`}
+              className="grid gap-4 sm:grid-cols-[9rem_minmax(0,1fr)]"
+            >
+              <img
+                src={project.image.src}
+                alt={project.image.alt}
+                width={project.image.width}
+                height={project.image.height}
+                loading="lazy"
+                className="aspect-[16/10] w-full rounded-preview border border-border object-cover object-top"
+              />
+              <div>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <h2 id={`${project.id}-heading`} className="text-2xl font-semibold tracking-tight">
+                    {project.title}
+                  </h2>
+                  <p className="text-sm text-muted">{project.liveUrl ? 'Live project' : 'Local preview'}</p>
+                </div>
+                <p className="mt-2 text-muted">{project.description}</p>
+                <p className="mt-2 text-sm text-muted">{project.technologies.join(' · ')}</p>
+                {project.sourceUrl && (
+                  <a className="text-link mt-2" href={project.sourceUrl}>View repository</a>
+                )}
               </div>
-              <p className="mt-2 text-muted">{project.description}</p>
-              {project.sourceUrl && (
-                <a className="text-link mt-2" href={project.sourceUrl}>View repository</a>
-              )}
             </article>
           ))}
         </div>
