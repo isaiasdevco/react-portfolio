@@ -15,6 +15,8 @@ No environment variables or backend services are required to run the site.
 
 Home is available at `/` and the project gallery at `/projects`. Unknown routes show a page with links back to the site. The header’s About and Contact links lead to the corresponding sections on Home.
 
+The gallery filters projects by technology, including partial names regardless of capitalization. It shows the result count and a message when nothing matches.
+
 ## Commands
 
 | Command | Purpose |
