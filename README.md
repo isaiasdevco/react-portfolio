@@ -1,6 +1,6 @@
 # Isaías Cordero — Portfolio
 
-My personal portfolio, built with React, Vite, and Tailwind CSS. I’m a Computer Engineering student at Universidad Católica de Santiago de Guayaquil (UCSG), focused on frontend development.
+My personal portfolio, built with React, Vite, React Router, and Tailwind CSS. I’m a Computer Engineering student at Universidad Católica de Santiago de Guayaquil (UCSG), focused on frontend development.
 
 ## Run locally
 
@@ -12,6 +12,8 @@ npm run dev
 ```
 
 No environment variables or backend services are required to run the site.
+
+Home is available at `/` and the project gallery at `/projects`. Unknown routes show a page with links back to the site. The header’s About and Contact links lead to the corresponding sections on Home.
 
 ## Commands
 
@@ -29,7 +31,7 @@ No environment variables or backend services are required to run the site.
 - `src/sections/` — page sections.
 - `src/data/projects.js` — project descriptions, images, and links.
 - `src/styles/` — theme variables and shared styles.
-- `src/App.jsx` — application layout.
+- `src/App.jsx` — shared layout, routes, and navigation focus.
 - `public/` — static assets and font licenses.
 
 ## Styling

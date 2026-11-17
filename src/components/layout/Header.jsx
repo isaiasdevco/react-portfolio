@@ -1,15 +1,10 @@
-const navigation = [
-  { label: 'Home', href: '#home' },
-  { label: 'Projects', href: '#work' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-]
+import { Link, NavLink } from 'react-router'
 
 export default function Header() {
   return (
     <header className="page-container flex items-center justify-between gap-3 border-b border-border py-4">
-      <a
-        href="#home"
+      <Link
+        to="/"
         aria-label="Isaías Cordero, home"
         className="flex min-h-11 items-center gap-5"
       >
@@ -17,20 +12,13 @@ export default function Header() {
         <span className="hidden border-l border-border pl-5 text-sm md:inline">
           Isaías Cordero
         </span>
-      </a>
+      </Link>
       <nav aria-label="Main navigation">
         <ul className="flex items-center sm:gap-2">
-          {navigation.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="nav-link"
-                aria-current={label === 'Home' ? 'page' : undefined}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
+          <li><NavLink to="/" end className="nav-link">Home</NavLink></li>
+          <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
+          <li><Link to="/#about" className="nav-link">About</Link></li>
+          <li><Link to="/#contact" className="nav-link">Contact</Link></li>
         </ul>
       </nav>
     </header>

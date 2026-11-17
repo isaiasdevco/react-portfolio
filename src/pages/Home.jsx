@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import Hero from '../sections/Hero.jsx'
 import FeaturedProject from '../sections/FeaturedProject.jsx'
 import ArrowUpRight from '../components/ui/ArrowUpRight.jsx'
@@ -12,9 +13,14 @@ export default function Home() {
       <Hero />
 
       <section id="work" tabIndex={-1} aria-labelledby="work-heading" className="scroll-mt-6">
-        <h2 id="work-heading" className="mb-6 text-2xl font-semibold tracking-tight">
-          Selected work
-        </h2>
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+          <h2 id="work-heading" className="text-2xl font-semibold tracking-tight">
+            Selected work
+          </h2>
+          <Link className="text-link" to="/projects">
+            All projects <ArrowUpRight />
+          </Link>
+        </div>
         <FeaturedProject project={featuredProject} />
       </section>
 

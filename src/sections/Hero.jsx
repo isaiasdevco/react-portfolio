@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import ArrowUpRight from '../components/ui/ArrowUpRight.jsx'
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
           I’m building and learning from.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3">
-          <a className="button-primary" href="#work">Explore projects</a>
+          <Link className="button-primary" to="/projects">Explore projects</Link>
           <a className="text-link" href="https://github.com/isaiasdevco">
             GitHub <ArrowUpRight />
           </a>
