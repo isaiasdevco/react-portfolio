@@ -4,11 +4,13 @@ import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
+import About from './pages/About.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 const pageTitles = {
   '/': 'Isaías Cordero | Frontend Portfolio',
   '/projects': 'Projects | Isaías Cordero',
+  '/about': 'About | Isaías Cordero',
 }
 
 export default function App() {
@@ -50,6 +52,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

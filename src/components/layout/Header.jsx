@@ -17,7 +17,7 @@ export default function Header() {
         <ul className="flex items-center sm:gap-2">
           <li><NavLink to="/" end className="nav-link">Home</NavLink></li>
           <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
-          <li><Link to="/#about" className="nav-link">About</Link></li>
+          <li><NavLink to="/about" className="nav-link">About</NavLink></li>
           <li><Link to="/#contact" className="nav-link">Contact</Link></li>
         </ul>
       </nav>

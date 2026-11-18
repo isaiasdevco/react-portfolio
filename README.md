@@ -13,7 +13,7 @@ npm run dev
 
 No environment variables or backend services are required to run the site.
 
-Home is available at `/` and the project gallery at `/projects`. Unknown routes show a page with links back to the site. The header’s About and Contact links lead to the corresponding sections on Home.
+Home is available at `/`, the project gallery at `/projects`, and my background and skills at `/about`. Unknown routes show a page with links back to the site. The header’s Contact link leads to the contact section on Home.
 
 The gallery filters projects by technology, including partial names regardless of capitalization. It shows the result count and a message when nothing matches.
 
@@ -32,6 +32,7 @@ The gallery filters projects by technology, including partial names regardless o
 - `src/pages/` — page compositions.
 - `src/sections/` — page sections.
 - `src/data/projects.js` — project descriptions, images, and links.
+- `src/data/skills.js` — technologies used across my projects.
 - `src/styles/` — theme variables and shared styles.
 - `src/App.jsx` — shared layout, routes, and navigation focus.
 - `public/` — static assets and font licenses.
