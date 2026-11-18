@@ -33,6 +33,7 @@ The gallery filters projects by technology, including partial names regardless o
 - `src/sections/` — page sections.
 - `src/data/projects.js` — project descriptions, images, and links.
 - `src/data/skills.js` — technologies used across my projects.
+- `src/hooks/useTheme.js` — system preference and saved theme choice.
 - `src/styles/` — theme variables and shared styles.
 - `src/App.jsx` — shared layout, routes, and navigation focus.
 - `public/` — static assets and font licenses.
@@ -40,6 +41,8 @@ The gallery filters projects by technology, including partial names regardless o
 ## Styling
 
 Tailwind CSS uses its Vite plugin. Colors, fonts, and spacing are defined in `src/styles/tokens.css`. Layout uses utility classes; shared controls and base styles live in `globals.css`.
+
+The theme follows your system setting until you choose light or dark with the header button. Your choice is saved locally when the browser allows it.
 
 DM Sans and Instrument Serif are served locally through Fontsource. Both use the SIL Open Font License; copies are included in `public/licenses/`.
 

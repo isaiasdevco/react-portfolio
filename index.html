@@ -8,6 +8,16 @@
       content="Isaías Cordero — Computer Engineering student at UCSG, focused on frontend development."
     />
     <meta name="theme-color" content="#171F27" />
+    <script>
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme')
+        if (savedTheme === 'light' || savedTheme === 'dark') theme = savedTheme
+      } catch {
+        // Use the system preference when storage is unavailable.
+      }
+      document.documentElement.dataset.theme = theme
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Isaías Cordero | Frontend Portfolio</title>
   </head>

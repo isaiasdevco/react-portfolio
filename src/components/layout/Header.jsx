@@ -1,15 +1,16 @@
 import { Link, NavLink } from 'react-router'
+import ThemeToggle from '../ui/ThemeToggle.jsx'
 
 export default function Header() {
   return (
-    <header className="page-container flex items-center justify-between gap-3 border-b border-border py-4">
+    <header className="page-container grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-2 border-b border-border py-4 sm:grid-cols-[1fr_auto_auto]">
       <Link
         to="/"
         aria-label="Isaías Cordero, home"
-        className="flex min-h-11 items-center gap-5"
+        className="col-span-2 flex min-h-11 w-fit items-center gap-5 sm:col-span-1"
       >
         <span className="monogram" aria-hidden="true">IC</span>
-        <span className="hidden border-l border-border pl-5 text-sm md:inline">
+        <span className="border-l border-border pl-5 text-sm">
           Isaías Cordero
         </span>
       </Link>
@@ -21,6 +22,7 @@ export default function Header() {
           <li><Link to="/#contact" className="nav-link">Contact</Link></li>
         </ul>
       </nav>
+      <ThemeToggle />
     </header>
   )
 }
