@@ -1,6 +1,6 @@
 # Isaías Cordero — Portfolio
 
-My personal portfolio, built with React, Vite, React Router, and Tailwind CSS. I’m a Computer Engineering student at Universidad Católica de Santiago de Guayaquil (UCSG), focused on frontend development.
+My personal portfolio, built with React, Vite, React Router, and Tailwind CSS. I’m a sixth-semester Computer Engineering student at Universidad Católica de Santiago de Guayaquil (UCSG), with training in programming, web development, and databases.
 
 ## Run locally
 
@@ -33,6 +33,7 @@ The gallery filters projects by technology, including partial names regardless o
 - `src/sections/` — page sections.
 - `src/data/projects.js` — project descriptions, images, and links.
 - `src/data/skills.js` — technologies used across my projects.
+- `src/data/profile.js` — profile and contact information.
 - `src/hooks/useTheme.js` — system preference and saved theme choice.
 - `src/styles/` — theme variables and shared styles.
 - `src/App.jsx` — shared layout, routes, and navigation focus.
@@ -50,7 +51,7 @@ DM Sans and Instrument Serif are served locally through Fontsource. Both use the
 
 The NovaWeb preview is a screenshot of [my published landing page](https://isaiasdevco.github.io/landing-page-project/), a project for a fictional digital studio. Its source is available in [landing-page-project](https://github.com/isaiasdevco/landing-page-project).
 
-Medicina is an academic Laravel application for managing patients and doctors. Its patient management screenshot was captured from a local installation using a separate database and fictitious demo data. It has no public demo linked.
+Medicina is an academic Laravel application for managing patients, doctors, and their assignments, with PDF and QR output. Its screenshot uses fictitious demo records.
 
 ## Validation
 

@@ -19,16 +19,19 @@ const projects = [
   {
     id: 'medicina',
     title: 'Medicina',
-    description: 'An academic app for managing patients and doctors.',
+    category: 'Web application',
+    description: 'An academic application for managing patients, doctors and their assignments.',
     technologies: ['PHP', 'Laravel', 'SQLite'],
+    features: ['Patient and doctor records', 'PDF and QR output'],
     sourceUrl: null,
     liveUrl: null,
     image: {
       src: '/images/projects/medicina.png',
-      alt: 'Medicina patient management panel with fictitious demo records and doctor assignments.',
+      alt: 'Medicina patient list with doctor assignments and record actions.',
       width: 1440,
       height: 900,
     },
+    featured: true,
   },
 ]
 

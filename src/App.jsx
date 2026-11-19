@@ -6,9 +6,10 @@ import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
 import About from './pages/About.jsx'
 import NotFound from './pages/NotFound.jsx'
+import profile from './data/profile.js'
 
 const pageTitles = {
-  '/': 'Isaías Cordero | Frontend Portfolio',
+  '/': `${profile.name} | ${profile.role}`,
   '/projects': 'Projects | Isaías Cordero',
   '/about': 'About | Isaías Cordero',
 }
