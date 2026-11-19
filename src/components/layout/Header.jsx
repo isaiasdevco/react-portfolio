@@ -19,7 +19,7 @@ export default function Header() {
           <li><NavLink to="/" end className="nav-link">Home</NavLink></li>
           <li><NavLink to="/projects" className="nav-link">Projects</NavLink></li>
           <li><NavLink to="/about" className="nav-link">About</NavLink></li>
-          <li><Link to="/#contact" className="nav-link">Contact</Link></li>
+          <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
         </ul>
       </nav>
       <ThemeToggle />

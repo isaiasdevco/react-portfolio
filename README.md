@@ -13,9 +13,11 @@ npm run dev
 
 No environment variables or backend services are required to run the site.
 
-Home is available at `/`, the project gallery at `/projects`, and my background and skills at `/about`. Unknown routes show a page with links back to the site. The header’s Contact link leads to the contact section on Home.
+Home is available at `/`, the project gallery at `/projects`, my background and skills at `/about`, and the contact form at `/contact`. Unknown routes show a page with links back to the site.
 
 The gallery filters projects by technology, including partial names regardless of capitalization. It shows the result count and a message when nothing matches.
+
+The contact form validates the name, email, and message, then prepares a link to an email draft. The visitor opens, reviews, and sends it in their email application; this site does not deliver email through a backend service.
 
 ## Commands
 
@@ -56,3 +58,5 @@ Medicina is an academic Laravel application for managing patients, doctors, and 
 ## Validation
 
 Run `npm run lint` and `npm run build` before committing. For visual changes, check the development server and production preview at mobile, tablet, and desktop widths, including keyboard navigation and reduced motion.
+
+Check contact validation and review the generated draft with a configured email application.

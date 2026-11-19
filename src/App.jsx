@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
 import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
 import profile from './data/profile.js'
 
@@ -12,6 +13,7 @@ const pageTitles = {
   '/': `${profile.name} | ${profile.role}`,
   '/projects': 'Projects | Isaías Cordero',
   '/about': 'About | Isaías Cordero',
+  '/contact': 'Contact | Isaías Cordero',
 }
 
 export default function App() {
@@ -54,6 +56,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -3,7 +3,6 @@ import Hero from '../sections/Hero.jsx'
 import FeaturedProject from '../sections/FeaturedProject.jsx'
 import ArrowUpRight from '../components/ui/ArrowUpRight.jsx'
 import projects from '../data/projects.js'
-import profile from '../data/profile.js'
 
 export default function Home() {
   const selectedProjects = projects.filter(project => project.featured)
@@ -33,10 +32,10 @@ export default function Home() {
         className="mt-12 scroll-mt-6 border-t border-border py-8 md:mt-14"
       >
         <h2 id="contact-heading" className="text-2xl font-semibold tracking-tight">Let’s connect.</h2>
-        <p className="mt-2 text-muted">Find my projects and code on GitHub.</p>
-        <a className="text-link mt-2" href={profile.githubUrl}>
-          Visit my GitHub <ArrowUpRight />
-        </a>
+        <p className="mt-2 text-muted">For projects or opportunities, get in touch by email.</p>
+        <Link className="text-link mt-2" to="/contact">
+          Contact me <ArrowUpRight />
+        </Link>
       </section>
     </>
   )

@@ -8,6 +8,7 @@
   --color-muted: #adb4bb;
   --color-border: #3b4650;
   --color-control-border: #748078;
+  --color-error: #efa69e;
 
   --font-sans: 'DM Sans Variable', Arial, sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
@@ -36,4 +37,5 @@
   --color-muted: #5f685f;
   --color-border: #d2d4c9;
   --color-control-border: #7b8579;
+  --color-error: #a1352b;
 }
