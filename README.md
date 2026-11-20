@@ -28,6 +28,12 @@ The contact form validates the name, email, and message, then prepares a link to
 | `npm run build` | Create the production build in `dist/` |
 | `npm run preview` | Serve the production build locally after building |
 
+## Deployment
+
+Use the Vite preset on Vercel with Node.js 24, build command `npm run build`, and output directory `dist`. No environment variables are required.
+
+`vercel.json` routes page requests to `index.html` so React Router can handle direct visits and refreshes on `/projects`, `/about`, and `/contact`.
+
 ## Structure
 
 - `src/components/` — shared interface components.
