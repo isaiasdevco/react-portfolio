@@ -26,7 +26,7 @@ export default function FeaturedProject({ project }) {
           {image}
         </a>
       ) : (
-        <div className="overflow-hidden rounded-preview border border-border bg-surface md:col-span-7">
+        <div className="project-preview md:col-span-7">
           {image}
         </div>
       )}

@@ -25,7 +25,7 @@ export default function ProjectCard({ project }) {
           {image}
         </a>
       ) : (
-        <div className="overflow-hidden rounded-preview border border-border bg-surface">
+        <div className="project-preview">
           {image}
         </div>
       )}

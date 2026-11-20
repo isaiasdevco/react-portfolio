@@ -104,12 +104,42 @@
   }
 
   .project-preview {
+    position: relative;
     display: block;
-    overflow: hidden;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-preview);
+    padding: 0.5rem;
     background: var(--color-surface);
     transition: border-color var(--transition-duration);
+  }
+
+  .project-preview img {
+    border-radius: calc(var(--radius-preview) - 0.25rem);
+  }
+
+  .project-preview::before,
+  .project-preview::after {
+    position: absolute;
+    width: 1.75rem;
+    height: 1.75rem;
+    pointer-events: none;
+    content: '';
+  }
+
+  .project-preview::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid var(--color-primary);
+    border-left: 2px solid var(--color-primary);
+    border-top-left-radius: var(--radius-preview);
+  }
+
+  .project-preview::after {
+    right: -1px;
+    bottom: -1px;
+    border-right: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    border-bottom-right-radius: var(--radius-preview);
   }
 
   .form-control {
@@ -161,7 +191,7 @@
       color: var(--color-primary);
     }
 
-    .project-preview:hover {
+    a.project-preview:hover {
       border-color: var(--color-primary);
     }
   }
