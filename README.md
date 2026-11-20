@@ -21,6 +21,8 @@ The contact form validates the name, email and message, then sends them to Forms
 
 The public form endpoint is set in `src/data/profile.js`. Formspree handles email delivery; no email password or secret API key is stored in the site. For your own copy, create a Formspree form, confirm its recipient, and replace the endpoint and email in that file. Sending requires an internet connection and an active Formspree form.
 
+Email validation checks the address format and a domain such as `example.com`. It cannot confirm that a mailbox exists. Spam checks and delivery are handled by Formspree.
+
 ## Commands
 
 | Command | Purpose |
@@ -35,6 +37,8 @@ The public form endpoint is set in `src/data/profile.js`. Formspree handles emai
 Use the Vite preset on Vercel with Node.js 24, build command `npm run build`, and output directory `dist`. No environment variables are required.
 
 `vercel.json` routes page requests to `index.html` so React Router can handle direct visits and refreshes on `/projects`, `/about`, and `/contact`.
+
+It also restricts scripts and assets to this site, allows form requests to Formspree, and blocks embedding. The theme script is served separately so inline scripts can stay disabled. The development server blocks private files, including local Vercel state.
 
 ## Structure
 

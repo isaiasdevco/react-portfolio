@@ -1,6 +1,17 @@
 import { useState } from 'react'
 import profile from '../../data/profile.js'
 
+function isValidEmail(input, email) {
+  const [mailbox, domain] = email.split('@')
+  return !input.validity.typeMismatch
+    && email.length <= 254
+    && mailbox.length <= 64
+    && !mailbox.startsWith('.')
+    && !mailbox.endsWith('.')
+    && !mailbox.includes('..')
+    && /\.(?:[a-z]{2,}|xn--[a-z0-9-]+)$/i.test(domain)
+}
+
 export default function ContactForm() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
@@ -23,13 +34,21 @@ export default function ContactForm() {
     const message = data.get('message').trim()
     const formErrors = {}
 
-    if (!name) formErrors.name = 'Enter your name.'
+    if (!name) {
+      formErrors.name = 'Enter your name.'
+    } else if (name.length > 100) {
+      formErrors.name = 'Use up to 100 characters for your name.'
+    }
     if (!email) {
       formErrors.email = 'Enter your email address.'
-    } else if (form.elements.namedItem('email').validity.typeMismatch) {
-      formErrors.email = 'Enter a valid email address.'
+    } else if (!isValidEmail(form.elements.namedItem('email'), email)) {
+      formErrors.email = 'Enter a valid email address, such as name@example.com.'
     }
-    if (!message) formErrors.message = 'Write a message.'
+    if (!message) {
+      formErrors.message = 'Write a message.'
+    } else if (message.length > 2000) {
+      formErrors.message = 'Use up to 2,000 characters for your message.'
+    }
 
     setErrors(formErrors)
     setStatus('idle')
