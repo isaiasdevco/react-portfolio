@@ -3,17 +3,19 @@ import profile from '../../data/profile.js'
 
 export default function ContactForm() {
   const [errors, setErrors] = useState({})
-  const [draftUrl, setDraftUrl] = useState('')
+  const [status, setStatus] = useState('idle')
   const hasErrors = Object.values(errors).some(Boolean)
+  const isSending = status === 'sending'
 
   function handleChange(event) {
     const { name } = event.target
     if (errors[name]) setErrors(previous => ({ ...previous, [name]: undefined }))
-    if (draftUrl) setDraftUrl('')
+    if (status !== 'idle') setStatus('idle')
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
+    if (isSending) return
     const form = event.currentTarget
     const data = new FormData(form)
     const name = data.get('name').trim()
@@ -30,7 +32,7 @@ export default function ContactForm() {
     if (!message) formErrors.message = 'Write a message.'
 
     setErrors(formErrors)
-    setDraftUrl('')
+    setStatus('idle')
     const firstError = Object.keys(formErrors)[0]
     if (firstError) {
       // Focus after the error descriptions have been rendered.
@@ -38,19 +40,46 @@ export default function ContactForm() {
       return
     }
 
-    const subject = `Portfolio enquiry from ${name}`
-    const body = `Name: ${name}\r\nEmail: ${email}\r\n\r\n${message.replace(/\r?\n/g, '\r\n')}`
-    const url = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    setDraftUrl(url)
-    requestAnimationFrame(() => form.querySelector('a[href^="mailto:"]').focus())
+    data.set('name', name)
+    data.set('email', email)
+    data.set('message', message)
+    setStatus('sending')
+
+    try {
+      const response = await fetch(profile.contactEndpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+        signal: AbortSignal.timeout(15000),
+      })
+      const result = await response.json()
+      if (!response.ok || (result.ok !== true && typeof result.next !== 'string')) {
+        setStatus('error')
+        return
+      }
+      form.reset()
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit} onChange={handleChange} aria-labelledby="message-heading" aria-describedby="contact-method">
+    <form
+      action={profile.contactEndpoint}
+      method="POST"
+      noValidate
+      onSubmit={handleSubmit}
+      onChange={handleChange}
+      aria-labelledby="message-heading"
+      aria-describedby="contact-method"
+    >
       <p className="mb-6 text-sm text-muted">All fields are required.</p>
       {hasErrors && <p role="alert" className="mb-4 text-sm text-error">Please check the highlighted fields.</p>}
 
-      <div className="space-y-5">
+      <input type="hidden" name="_subject" value="Portfolio contact" />
+      <input type="text" name="_gotcha" autoComplete="off" tabIndex={-1} aria-hidden="true" className="hidden" />
+      <fieldset disabled={isSending} className="space-y-5 disabled:opacity-70">
         <div>
           <label htmlFor="contact-name" className="mb-2 block text-sm font-medium">Name</label>
           <input
@@ -96,19 +125,23 @@ export default function ContactForm() {
           <p id="message-help" className="mt-2 text-sm text-muted">Up to 2,000 characters.</p>
           {errors.message && <p id="message-error" className="mt-2 text-sm text-error">{errors.message}</p>}
         </div>
-      </div>
+      </fieldset>
 
-      {draftUrl ? (
-        <a href={draftUrl} className="button-primary mt-6">Open email draft</a>
-      ) : (
-        <button type="submit" className="button-primary mt-6 cursor-pointer">Prepare email draft</button>
-      )}
+      <button type="submit" disabled={isSending} className="button-primary mt-6 cursor-pointer disabled:cursor-wait disabled:opacity-70">
+        {isSending ? 'Sending…' : 'Send message'}
+      </button>
       <p id="contact-method" className="mt-3 text-sm text-muted">
-        Prepare a draft, then open it in your email app to review and send.
-        You can also copy the email address into your webmail.
+        I’ll reply to the email address you provide.
       </p>
-      {draftUrl && (
-        <p role="status" className="mt-4 text-sm text-muted">Draft prepared. Open it in your email app to review and send.</p>
+      <p role="status" aria-atomic="true" className="mt-4 text-sm text-muted">
+        {isSending && 'Sending your message…'}
+        {status === 'success' && 'Thanks, your message has been sent.'}
+      </p>
+      {status === 'error' && (
+        <p role="alert" className="mt-4 text-sm text-error">
+          We couldn’t confirm your message was sent. Your text is still here; try again or{' '}
+          <a className="underline underline-offset-4" href={`mailto:${profile.email}`}>email me directly</a>.
+        </p>
       )}
     </form>
   )
