@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <section id="work" tabIndex={-1} aria-labelledby="work-heading" className="scroll-mt-6">
+      <section id="work" tabIndex={-1} aria-labelledby="work-heading" className="scroll-mt-6 border-t border-border pt-8 md:pt-10">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
           <h2 id="work-heading" className="text-2xl font-semibold tracking-tight">
             Selected work
@@ -20,7 +20,7 @@ export default function Home() {
             All projects <ArrowUpRight />
           </Link>
         </div>
-        <div className="space-y-12 md:space-y-16">
+        <div className="space-y-10 md:space-y-12">
           {selectedProjects.map(project => <FeaturedProject key={project.id} project={project} />)}
         </div>
       </section>

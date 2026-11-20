@@ -15,7 +15,7 @@ No environment variables or backend services are required to run the site.
 
 Home is available at `/`, the project gallery at `/projects`, my background and skills at `/about`, and the contact form at `/contact`. Unknown routes show a page with links back to the site.
 
-The gallery filters projects by technology, including partial names regardless of capitalization. It shows the result count and a message when nothing matches.
+Each project includes a description, screenshot and technologies. The details button explains how it was built; React state controls which details are visible.
 
 The contact form validates the name, email, and message, then prepares a link to an email draft. The visitor opens, reviews, and sends it in their email application; this site does not deliver email through a backend service.
 

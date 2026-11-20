@@ -19,6 +19,7 @@ export default function Hero() {
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3">
           <Link className="button-primary" to="/projects">Explore projects</Link>
+          <Link className="text-link" to="/about">About me</Link>
           <a className="text-link" href={profile.githubUrl}>
             GitHub <ArrowUpRight />
           </a>

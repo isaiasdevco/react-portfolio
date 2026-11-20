@@ -13,7 +13,10 @@ export default function FeaturedProject({ project }) {
   )
 
   return (
-    <article aria-labelledby={`${project.id}-heading`} className="grid items-center gap-7 md:grid-cols-12 md:gap-10">
+    <article
+      aria-labelledby={`${project.id}-heading`}
+      className="grid items-center gap-7 border-b border-border pb-10 last:border-b-0 last:pb-0 md:grid-cols-12 md:gap-10 md:pb-12 md:last:pb-0"
+    >
       {project.liveUrl ? (
         <a
           href={project.liveUrl}
