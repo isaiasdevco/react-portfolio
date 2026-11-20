@@ -67,7 +67,7 @@ DM Sans and Instrument Serif are served locally through Fontsource. Both use the
 
 The NovaWeb preview is a screenshot of [my published landing page](https://isaiasdevco.github.io/landing-page-project/), a project for a fictional digital studio. Its source is available in [landing-page-project](https://github.com/isaiasdevco/landing-page-project).
 
-Medicina is an academic Laravel application for managing patients, doctors, and their assignments, with PDF and QR output. Its screenshot uses fictitious demo records.
+[Medicina](https://github.com/isaiasdevco/Medicina) is an academic Laravel application for managing patients, doctors, and their assignments, with PDF and QR output. Its screenshot uses fictitious demo records.
 
 ## Validation
 

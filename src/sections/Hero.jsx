@@ -20,7 +20,13 @@ export default function Hero() {
         <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3">
           <Link className="button-primary" to="/projects">Explore projects</Link>
           <Link className="text-link" to="/about">About me</Link>
-          <a className="text-link" href={profile.githubUrl}>
+          <a
+            className="text-link"
+            href={profile.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub (opens in a new tab)"
+          >
             GitHub <ArrowUpRight />
           </a>
         </div>

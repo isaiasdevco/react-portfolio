@@ -15,7 +15,13 @@ export default function Contact() {
           <p className="mt-5 text-sm text-muted">Email</p>
           <a href={`mailto:${profile.email}`} className="text-link break-all">{profile.email}</a>
           <p className="mt-5 text-sm text-muted">Code & projects</p>
-          <a href={profile.githubUrl} className="text-link">
+          <a
+            className="text-link"
+            href={profile.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub (opens in a new tab)"
+          >
             GitHub <ArrowUpRight />
           </a>
           <p className="mt-6 text-sm text-muted">{profile.location}</p>

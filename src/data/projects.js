@@ -27,7 +27,7 @@ const projects = [
     technologies: ['PHP', 'Laravel', 'SQLite'],
     implementation: 'PHP and Laravel handle routes, form validation and access to patient and doctor records. SQLite stores the data. Patient records can also be exported as PDF documents and represented with QR codes.',
     features: ['Patient and doctor records', 'PDF and QR output'],
-    sourceUrl: null,
+    sourceUrl: 'https://github.com/isaiasdevco/Medicina',
     liveUrl: null,
     image: {
       src: '/images/projects/medicina.png',

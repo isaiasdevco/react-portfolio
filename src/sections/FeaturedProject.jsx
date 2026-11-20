@@ -1,6 +1,8 @@
 import ArrowUpRight from '../components/ui/ArrowUpRight.jsx'
 
 export default function FeaturedProject({ project }) {
+  const previewUrl = project.liveUrl || project.sourceUrl
+  const previewLabel = project.liveUrl ? `Visit ${project.title} website` : `View ${project.title} source code`
   const image = (
     <img
       src={project.image.src}
@@ -17,11 +19,13 @@ export default function FeaturedProject({ project }) {
       aria-labelledby={`${project.id}-heading`}
       className="grid items-center gap-7 border-b border-border pb-10 last:border-b-0 last:pb-0 md:grid-cols-12 md:gap-10 md:pb-12 md:last:pb-0"
     >
-      {project.liveUrl ? (
+      {previewUrl ? (
         <a
-          href={project.liveUrl}
+          href={previewUrl}
           className="project-preview md:col-span-7"
-          aria-label={`Visit ${project.title} website`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${previewLabel} (opens in a new tab)`}
         >
           {image}
         </a>
@@ -41,11 +45,27 @@ export default function FeaturedProject({ project }) {
         {(project.liveUrl || project.sourceUrl) && (
           <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-1">
             {project.liveUrl && (
-              <a className="text-link" href={project.liveUrl}>
+              <a
+                className="text-link"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit website for ${project.title} (opens in a new tab)`}
+              >
                 Visit website <ArrowUpRight />
               </a>
             )}
-            {project.sourceUrl && <a className="text-link" href={project.sourceUrl}>Source code</a>}
+            {project.sourceUrl && (
+              <a
+                className="text-link"
+                href={project.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Source code for ${project.title} (opens in a new tab)`}
+              >
+                Source code
+              </a>
+            )}
           </div>
         )}
       </div>
